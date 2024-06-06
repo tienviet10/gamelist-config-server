@@ -1,0 +1,50 @@
+application:
+  version: 1.0.0
+
+server:
+  port: 8081
+  shutdown: graceful
+
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5332/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+resilience4j:
+  retry:
+    backends:
+      catalog-service:
+        max-attempts: 2
+        wait-duration: 1s
+  circuitbreaker:
+    backends:
+      catalog-service:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 6
+        minimum-number-of-calls: 4
+        wait-duration-in-open-state: 20s
+        permitted-number-of-calls-in-half-open-state: 2
+        failure-rate-threshold: 50
