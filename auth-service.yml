@@ -1,0 +1,32 @@
+application:
+  title: GameList
+  version: 1.0.0
+
+server:
+  port: 8082
+  shutdown: graceful
+
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5332/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    open-in-view: false
+    show-sql: true
