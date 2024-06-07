@@ -30,3 +30,5 @@ spring:
   jpa:
     open-in-view: false
     show-sql: true
+swagger:
+  api-gateway-url: http://localhost:8989/auth-service
