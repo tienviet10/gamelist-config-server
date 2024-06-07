@@ -78,3 +78,7 @@ springdoc:
         url: /v3/api-docs/auth-service
       - name: game-service
         url: /v3/api-docs/game-service
+      - name: user-service
+        url: /v3/api-docs/user-service
+      - name: social-service
+        url: /v3/api-docs/social-service
