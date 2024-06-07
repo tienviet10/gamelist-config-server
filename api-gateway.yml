@@ -74,7 +74,7 @@ springdoc:
   swagger-ui:
     use-root-path: true
     urls:
-      - name: auth
-        url: /v3/api-docs/auth
-      - name: game
-        url: /v3/api-docs/game
+      - name: auth-service
+        url: /v3/api-docs/auth-service
+      - name: game-service
+        url: /v3/api-docs/game-service
