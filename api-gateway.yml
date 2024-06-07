@@ -80,3 +80,5 @@ springdoc:
         url: /v3/api-docs/user-service
       - name: social-service
         url: /v3/api-docs/social-service
+      - name: auth-service
+        url: /v3/api-docs/auth-service
