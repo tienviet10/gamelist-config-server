@@ -55,6 +55,13 @@ spring:
           filters:
             - AuthenticationFilter
             - RewritePath=/user-service/?(?<segment>.*), /${segment}
+        - id: go-service
+          uri: ${GO_SERVICE_URL:http://localhost:9000}
+          predicates:
+            - Path=/go-service/**
+          filters:
+            - AuthenticationFilter
+            - RewritePath=/go-service/?(?<segment>.*), /${segment}
 management:
   info:
     git:
