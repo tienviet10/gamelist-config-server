@@ -36,12 +36,12 @@ spring:
 resilience4j:
   retry:
     backends:
-      catalog-service:
+      game-service:
         max-attempts: 2
         wait-duration: 1s
   circuitbreaker:
     backends:
-      catalog-service:
+      game-service:
         sliding-window-type: COUNT_BASED
         sliding-window-size: 6
         minimum-number-of-calls: 4
