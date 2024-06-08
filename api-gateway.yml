@@ -60,7 +60,6 @@ spring:
           predicates:
             - Path=/go-service/**
           filters:
-            - AuthenticationFilter
             - RewritePath=/go-service/?(?<segment>.*), /${segment}
 management:
   info:
