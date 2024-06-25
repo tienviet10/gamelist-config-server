@@ -22,32 +22,32 @@ spring:
             allowed-headers: "*"
             allow-credentials: false
       routes:
-        - id: game-service
-          uri: ${GAME_SERVICE_URL:http://localhost:8083}
-          predicates:
-            - Path=/game-service/**
-          filters:
-            - SemiAuthenticationFilter
-            - RewritePath=/game-service/?(?<segment>.*), /${segment}
+        # - id: game-service
+        #   uri: ${GAME_SERVICE_URL:http://localhost:8083}
+        #   predicates:
+        #     - Path=/game-service/**
+        #   filters:
+        #     - SemiAuthenticationFilter
+        #     - RewritePath=/game-service/?(?<segment>.*), /${segment}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
-        - id: auth-service
-          uri: ${AUTH_SERVICE_URL:http://localhost:8082}
-          predicates:
-            - Path=/auth-service/**
-          filters:
-            - RewritePath=/auth-service/?(?<segment>.*), /${segment}
-        - id: social-service
-          uri: ${SOCIAL_SERVICE_URL:http://localhost:8081}
-          predicates:
-            - Path=/social-service/**
-          filters:
-            - SemiAuthenticationFilter
-            - RewritePath=/social-service/?(?<segment>.*), /${segment}
+        # - id: auth-service
+        #   uri: ${AUTH_SERVICE_URL:http://localhost:8082}
+        #   predicates:
+        #     - Path=/auth-service/**
+        #   filters:
+        #     - RewritePath=/auth-service/?(?<segment>.*), /${segment}
+        # - id: social-service
+        #   uri: ${SOCIAL_SERVICE_URL:http://localhost:8081}
+        #   predicates:
+        #     - Path=/social-service/**
+        #   filters:
+        #     - SemiAuthenticationFilter
+        #     - RewritePath=/social-service/?(?<segment>.*), /${segment}
         - id: user-service
           uri: ${USER_SERVICE_URL:http://localhost:8080}
           predicates:
@@ -55,12 +55,12 @@ spring:
           filters:
             - AuthenticationFilter
             - RewritePath=/user-service/?(?<segment>.*), /${segment}
-        - id: go-service
-          uri: ${GO_SERVICE_URL:http://localhost:9000}
-          predicates:
-            - Path=/go-service/**
-          filters:
-            - RewritePath=/go-service/?(?<segment>.*), /${segment}
+        # - id: go-service
+        #   uri: ${GO_SERVICE_URL:http://localhost:9000}
+        #   predicates:
+        #     - Path=/go-service/**
+        #   filters:
+        #     - RewritePath=/go-service/?(?<segment>.*), /${segment}
 management:
   info:
     git:
