@@ -41,13 +41,13 @@ spring:
             - Path=/auth-service/**
           filters:
             - RewritePath=/auth-service/?(?<segment>.*), /${segment}
-        # - id: social-service
-        #   uri: ${SOCIAL_SERVICE_URL:http://localhost:8081}
-        #   predicates:
-        #     - Path=/social-service/**
-        #   filters:
-        #     - SemiAuthenticationFilter
-        #     - RewritePath=/social-service/?(?<segment>.*), /${segment}
+        - id: social-service
+          uri: ${SOCIAL_SERVICE_URL:http://localhost:8081}
+          predicates:
+            - Path=/social-service/**
+          filters:
+            - SemiAuthenticationFilter
+            - RewritePath=/social-service/?(?<segment>.*), /${segment}
         - id: user-service
           uri: ${USER_SERVICE_URL:http://localhost:8080}
           predicates:
