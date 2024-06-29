@@ -52,3 +52,5 @@ resilience4j:
 
 swagger:
   api-gateway-url: http://localhost:8989/game-service
+game:
+  user-service-url: ${USER_SERVICE_URL:http://localhost:8080}
