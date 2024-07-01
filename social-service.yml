@@ -53,3 +53,4 @@ swagger:
 social:
   game-service-url: ${GAME_SERVICE_URL:http://localhost:8080}
   go-service-url: ${GO_SERVICE_URL:http://localhost:9000}
+  user-service-url: ${USER_SERVICE_URL:http://api-gateway:8989/user-service}
