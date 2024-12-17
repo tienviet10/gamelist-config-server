@@ -54,3 +54,7 @@ swagger:
   api-gateway-url: http://localhost:8989/game-service
 game:
   user-service-url: ${USER_SERVICE_URL:http://api-gateway:8989/user-service}
+
+grpc:
+  server:
+    port: 6565
