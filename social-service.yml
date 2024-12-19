@@ -58,3 +58,10 @@ social:
 grpc:
   server:
     port: ${GRPC_PORT:6566}
+  client:
+    auth-service-go:
+      address: static://localhost:6567
+      negotiation-type: plaintext
+    user-service-dotnet:
+      address: static://localhost:6568
+      negotiation-type: plaintext
