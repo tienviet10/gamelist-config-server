@@ -60,8 +60,8 @@ grpc:
     port: ${GRPC_PORT:6565}
   client:
     auth-service-go:
-      address: static://localhost:6567
+      address: static://${AUTH_SERVICE_ADDRESS:localhost:6567}
       negotiation-type: plaintext
     user-service-dotnet:
-      address: static://localhost:6568
+      address: static://${AUTH_SERVICE_ADDRESS:localhost:6568}
       negotiation-type: plaintext
