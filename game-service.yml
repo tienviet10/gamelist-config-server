@@ -63,5 +63,5 @@ grpc:
       address: static://${AUTH_SERVICE_ADDRESS:localhost:6567}
       negotiation-type: plaintext
     user-service-dotnet:
-      address: static://${AUTH_SERVICE_ADDRESS:localhost:6568}
+      address: static://${USER_SERVICE_ADDRESS:localhost:6568}
       negotiation-type: plaintext
