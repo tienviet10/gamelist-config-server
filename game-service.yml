@@ -33,6 +33,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+  data:
+    redis:
+      url: redis://localhost:6379
+  cache:
+    type: redis
 
 resilience4j:
   retry:
