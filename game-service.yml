@@ -23,10 +23,10 @@ management:
       probability: 1.0
 
 spring:
-  # datasource:
-  #   url: ${DB_URL:jdbc:postgresql://localhost:5332/postgres}
-  #   username: ${DB_USERNAME:postgres}
-  #   password: ${DB_PASSWORD:postgres}
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5332/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
   jpa:
     show-sql: true
     properties:
